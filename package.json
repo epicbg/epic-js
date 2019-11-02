@@ -1,0 +1,32 @@
+{
+  "name": "epic-js",
+  "version": "1.0.0",
+  "description": "JS framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development",
+    "production": "webpack --mode=production",
+    "build": "webpack --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epicbg/epic-js.git"
+  },
+  "author": "epicbg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/epicbg/epic-js/issues"
+  },
+  "homepage": "https://github.com/epicbg/epic-js#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "node-html-parser": "^1.1.16"
+  }
+}
