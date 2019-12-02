@@ -17,6 +17,11 @@ const render = (vDomObject) => {
                 vDomObject.state[event.target.getAttribute('bind')] = event.target.value
             }.bind(this, vDomObject))
         }
+
+        // Register event
+        if(k.includes('-')){
+            vDomEl.addEventListener(k.split('-')[1], vDomObject.methods[v].bind(vDomObject))
+        }
     }
     
     for (const childEl of vDomObject.children) {
