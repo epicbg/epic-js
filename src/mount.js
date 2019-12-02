@@ -1,16 +1,20 @@
 import { parse } from 'node-html-parser';
 import render from './render'
+import {createVDomTree} from './framework'
 
-export default (target, entry) => {
+// Create vDOM once and then start recompiling
+export default (target, entryClass) => {
     // Root element
-    let el = document.querySelector(target)
+    let app = document.querySelector(target)
     
-    // Our virtual dom
-    const vApp = parse(entry.template);
 
-    // render virtual dom
-    const rendered = render(vApp.firstChild, entry)
+    // Initial structure should be 
+    let vApp = createVDomTree(entryClass)
+    console.log(vApp)
+    const root = parse('<ul id="list"><li>Hello World</li></ul>');
+console.log(root)
     
-    // append it 
-    el.replaceWith(rendered)
+    let vAppRendered = render(vApp)
+
+    app.replaceWith(vAppRendered)
 }
